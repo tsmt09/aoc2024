@@ -9,7 +9,7 @@ function make2DArray(text) {
 }
 
 function countXMas(matrix) {
-    let directions = [
+    const directions = [
         [0, 1],
         [0, -1],
         [1, 0],
@@ -64,10 +64,10 @@ function countXMas2(matrix) {
     }
     return count;
 }
-let matrix = make2DArray(read);
+const matrix = make2DArray(read);
 // rotate and read
 
-let count = countXMas(matrix);
+const count = countXMas(matrix);
 console.log("res: %d", count);
-let count2 = countXMas2(matrix);
+const count2 = countXMas2(matrix);
 console.log("res: %d", count2);
