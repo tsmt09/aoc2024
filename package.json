@@ -9,7 +9,8 @@
     "d2": "deno --allow-read=. src/day2.js",
     "d3": "deno --allow-read=. src/day3.js",
     "d4": "deno --allow-read=. src/day4.js",
-    "d5": "deno --allow-read=. src/day5.js"
+    "d5": "deno --allow-read=. src/day5.js",
+    "d6": "deno --allow-read=. src/day6.js"
   },
   "dependencies": {
     "log": "^6.3.2"
