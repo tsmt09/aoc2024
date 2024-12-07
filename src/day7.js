@@ -1,5 +1,5 @@
-let read = Deno.readTextFileSync("day7_input.txt").split("\n").map(line =>{
-    let split = line.split(":");
+const read = Deno.readTextFileSync("day7_input.txt").split("\n").map(line =>{
+    const split = line.split(":");
     return {
         result: Number(split[0].trim()),
         numbers: split[1].trim().split(" ").map(v => Number(v))
@@ -32,12 +32,11 @@ function findRightCalc(line) {
         }
         const ops = binaryArray.map(num => {
             switch(num) {
-                case 0: return "+"; break;
-                case 1: return "*"; break;
-                default: return "||"; break;
-            }
+                case 0: return "+";
+                case 1: return "*";
+                default: return "||";            }
         });
-        let res = calc(line.numbers.slice(), ops);
+        const res = calc(line.numbers.slice(), ops);
         if (res == line.result) {
             found = res;
         } 
@@ -48,7 +47,7 @@ function findRightCalc(line) {
 function findAllLines(lines) {
     let result = 0;
     for(let i = 0; i < lines.length; i++) {
-        let res = findRightCalc(lines[i]);
+        const res = findRightCalc(lines[i]);
         if(res == undefined) {
             continue;
         } else {
