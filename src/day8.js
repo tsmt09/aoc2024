@@ -13,20 +13,6 @@ function isOutSideField(x,y) {
     }
 }
 
-function isAntinodeOnOtherNode(x, y) {
-    let isConflict = false;
-    chars.forEach((v, _) => {
-        if(v.positions.findIndex(item => item.x == x && item.y == y) !== -1) {
-            isConflict = true;
-            return true;
-        }
-    });
-    if(isConflict) {
-        console.log("%d, %d", x,y);
-    }
-    return isConflict;
-}
-
 read.forEach((line, y) => {
     line.forEach((char, x) => {
         if(char == ".") {
@@ -43,8 +29,8 @@ read.forEach((line, y) => {
     })
 })
 
-chars.forEach((value, key) => {
-    let antinodes = [];
+chars.forEach((value, _) => {
+    const antinodes = [];
     for(let i = 0; i < value.positions.length; i++) {
         for(let k = 0; k < value.positions.length; k++) {
             if(i == k) {
