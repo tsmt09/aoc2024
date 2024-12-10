@@ -9,8 +9,8 @@ read.forEach((line, y) => {
         }
     })
 });
-let y_limit = read.length;
-let x_limit = read[0].length;
+const y_limit = read.length;
+const x_limit = read[0].length;
 
 function mergeIfNotPresent(set, set2) {
     set2.forEach(pos => {
@@ -21,39 +21,39 @@ function mergeIfNotPresent(set, set2) {
 }
 
 function step(pos) {
-    let val = read[pos.y][pos.x];
+    const val = read[pos.y][pos.x];
     if(val == 9) {
         return [pos];
     }
-    let trail_ends = [];
+    const trail_ends = [];
     // try up
     if(pos.y > 0) {
-        let next = {x: pos.x, y: pos.y - 1};
-        let next_val = read[next.y][next.x];
+        const next = {x: pos.x, y: pos.y - 1};
+        const next_val = read[next.y][next.x];
         if(val + 1 == next_val) {
             mergeIfNotPresent(trail_ends, step(next));
         }
     }
     // try down
     if(pos.y < y_limit - 1) {
-        let next = {x: pos.x, y: pos.y + 1};
-        let next_val = read[next.y][next.x];
+        const next = {x: pos.x, y: pos.y + 1};
+        const next_val = read[next.y][next.x];
         if(val + 1 == next_val) {
             mergeIfNotPresent(trail_ends, step(next));
         }
     }
     // try left
     if(pos.x > 0) {
-        let next = {x: pos.x - 1, y: pos.y};
-        let next_val = read[next.y][next.x];
+        const next = {x: pos.x - 1, y: pos.y};
+        const next_val = read[next.y][next.x];
         if(val + 1 == next_val) {
             mergeIfNotPresent(trail_ends, step(next));
         }
     }
     // try right
     if(pos.x < x_limit - 1) {
-        let next = {x: pos.x + 1, y: pos.y};
-        let next_val = read[next.y][next.x];
+        const next = {x: pos.x + 1, y: pos.y};
+        const next_val = read[next.y][next.x];
         if(val + 1 == next_val) {
             mergeIfNotPresent(trail_ends, step(next));
         }
@@ -66,7 +66,7 @@ function trailHeadScore(th) {
 }
 
 
-console.log(trailheads.reduce((ret, current, idx) => {
-    let score = trailHeadScore(current);
+console.log(trailheads.reduce((ret, current) => {
+    const score = trailHeadScore(current);
     return ret + score;
 }, 0));
