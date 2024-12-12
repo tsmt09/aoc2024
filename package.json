@@ -14,7 +14,9 @@
     "d7": "deno --allow-read=. src/day7.js",
     "d8": "deno --allow-read=. src/day8.js",
     "d9": "deno --allow-read=. src/day9.js",
-    "d10": "deno --allow-read=. src/day10.js"
+    "d10": "deno --allow-read=. src/day10.js",
+    "d11": "deno --allow-read=. src/day11.js",
+    "d12": "deno --allow-read=. src/day12.js"
   },
   "dependencies": {
     "log": "^6.3.2"
